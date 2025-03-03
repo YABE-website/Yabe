@@ -1,34 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YABE</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header>
+    <header>
         <h1>YABE</h1>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#categories">Categories</a></li>
+                <li><a href="#" id="category-btn">Categories</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+                <div class="auth-buttons">
+                    <button id="signup-btn">Sign Up</button>
+                    <button id="login-btn">Sign In</button>
+                    <button id="logout-btn" style="display: none;">Log Out</button>
+                    
+                    <!-- Display User Info -->
+                    <p id="user-message"></p>                    
+            </header>
+
+  <!-- Sign In Modal -->
+<div id="signin-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('signin-modal')">&times;</span>
+        <h2>Sign In</h2>
+        <input type="text" id="signin-username" placeholder="Username">
+        <input type="password" id="signin-password" placeholder="Password">
+        <button onclick="signIn()">Login</button>
+        <p id="login-message"></p>
+    </div>
+</div>
+
+<!-- Sign Up Modal -->
+<div id="signup-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('signup-modal')">&times;</span>
+        <h2>Sign Up</h2>
+        <input type="text" id="signup-username" placeholder="Username">
+        <input type="password" id="signup-password" placeholder="Password">
+        <button onclick="signUp()">Register</button>
+        <p id="signup-message"></p>
+    </div>
+</div>
+
+
+        
         </nav>
         <div class="search-bar">
             <input type="text" placeholder="Search...">
             <button>🔍</button>
         </div>
     </header>
-    
+
     <section class="hero">
         <h2>Buy & Sell with Trust</h2>
         <p>Discover handmade goods, second-hand products, and digital assets in a safe marketplace.</p>
         <a href="#categories" class="btn">Explore Now</a>
     </section>
-    
+     <!-- Banner Slider -->
+     <section class="banner">
+        <div class="slide-container">
+            <div class="slide fade">
+                <img src="pictures/Gray Minimalist New Collection Banner.png" alt="Banner 1">
+            </div>
+            <div class="slide fade">
+                <img src="pictures/Yellow and Black Modern Minimal Aesthetic Handmade Product Etsy Shop Cover.png" alt="Banner 2">
+            </div>
+            <div class="slide fade">
+                <img src="https://via.placeholder.com/1000x400?text=Market+Banner+3" alt="Banner 3">
+            </div>
+        </div>
+    </section>
+
     <section id="categories" class="categories">
         <h2>Featured Categories</h2>
         <div class="category-grid">
@@ -37,10 +88,38 @@
             <div class="category">Digital Products</div>
         </div>
     </section>
-    
+
+    <!-- Category Pop-up Modal -->
+    <div id="category-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Categories</h2>
+            <ul>
+                <li><strong>Hand-Made Goods</strong>: Jewelries, Crochets, Candles</li>
+                <li><strong>Second-Hand Products</strong>: Clothes, Furniture</li>
+                <li><strong>Digital Products</strong>: E-books, Graphic Designs, Software</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Product Feature Section (5 Column Grid) -->
+    <section class="product-section">
+        <h2>Featured Products</h2>
+        <div class="product-container">
+            <div class="product-box">Product 1</div>
+            <div class="product-box">Product 2</div>
+            <div class="product-box">Product 3</div>
+            <div class="product-box">Product 4</div>
+            <div class="product-box">Product 5</div>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; 2025 YABE. All rights reserved.</p>
     </footer>
 
+    <script src="yabe.js"></script>
+
 </body>
+
 </html>
